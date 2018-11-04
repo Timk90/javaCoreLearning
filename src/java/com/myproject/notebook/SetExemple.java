@@ -10,6 +10,8 @@ class SetExemple{
   */
 
   public static void setUse(){
+     
+     int i;
      // There are three implementations of sets Hash, Tree, Linked
      System.out.println("Work with HashSet:");
      Set<String> hashSet = new HashSet<String>();
@@ -45,9 +47,29 @@ class SetExemple{
      System.out.println("Difference B - A");
      diff.removeAll(hashSet);
      System.out.println(diff);
+     //CHECK the size of set is like
+     System.out.println("Size of diff "+diff.size());
+     System.out.println("Size of A "+hashSet.size());
+     System.out.println("Size of B "+hashSet2.size());
+     //Check the emptiness of the set 
      diff.clear();
+     System.out.println("Is diff empty "+diff.size());
+     System.out.println("Is A empty "+hashSet.size());
+     System.out.println("Is B empty "+hashSet2.size());
           
-
+  /* Starting from this point I will try to assess an average time of common functions 
+     for different Sets
+  */
+     hashSet.clear();
+     Set<String> linkedSet = new LinkedSet<String>();
+     Set<String> treeSet = new TreeSet();
+     
+     for(i=0, i <10000, i++)
+     {
+       linkedList 
+      
+     }    
+     
      
   }
   
