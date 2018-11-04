@@ -17,18 +17,37 @@ class SetExemple{
      hashSet.add("Timur");
      hashSet.add("is");
      hashSet.add("my name");
-     //try to repeat
-     hashSet.add("Timur");       
+     //try to repeat one piece of content
+     //it will not be repeated in the set (will not be added)
+     hashSet.add("Timur");    
+     //it will be added to the set   
      hashSet.add("timur");
+     System.out.println("Set A");
      System.out.println(hashSet);
      Set<String> hashSet2 = new HashSet<String>();
-     hashSet2.addAll(Arrays.asList(new String[]{"1","2","3","4"}));
+     hashSet2.addAll(Arrays.asList(new String[]{"1","2","3","4","10","11","12","13"}));
+     System.out.println("Set B");
      System.out.println(hashSet2);
      //set - множество! Intersection of two Sets is 
-     Set<String> intersection = new HashSet<String>();
+     Set<String> intersection = new HashSet<String>(hashSet);
      intersection.retainAll(hashSet2);
+     System.out.println("Intersection of A and B");
      System.out.println(intersection);
-     
+     //the difference between two sets A - B
+     Set<String> diff = new HashSet<String>();
+     diff.addAll(hashSet);
+     System.out.println("Difference A - B");
+     diff.removeAll(hashSet2);
+     System.out.println(diff);
+     diff.clear();
+     //the difference between two sets B - A
+     diff.addAll(hashSet2);
+     System.out.println("Difference B - A");
+     diff.removeAll(hashSet);
+     System.out.println(diff);
+     diff.clear();
+          
+
      
   }
   
