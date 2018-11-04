@@ -110,6 +110,23 @@ class SetExemple{
      dt = stop - start;
      System.out.println("Iteration over HASH Set takes: "+dt);
      
+     //LINKED HASH SET
+     start = System.currentTimeMillis();
+     for(String str : linkedSet){
+        str = "";
+     }
+     stop = System.currentTimeMillis();
+     dt = stop - start;
+     System.out.println("Iteration over LINKED HASH Set takes: "+dt);
+
+     //TREE SET
+     start = System.currentTimeMillis();
+     for(String str : treeSet){
+        str = "";
+     }
+     stop = System.currentTimeMillis();
+     dt = stop - start;
+     System.out.println("Iteration over TREE Set takes: "+dt);
 
      //removing elements from different Sets
 
