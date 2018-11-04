@@ -11,7 +11,9 @@ class SetExemple{
 
   public static void setUse(){
      
+     long start, stop, dt;
      int i;
+
      // There are three implementations of sets Hash, Tree, Linked
      System.out.println("Work with HashSet:");
      Set<String> hashSet = new HashSet<String>();
@@ -53,23 +55,73 @@ class SetExemple{
      System.out.println("Size of B "+hashSet2.size());
      //Check the emptiness of the set 
      diff.clear();
-     System.out.println("Is diff empty "+diff.size());
-     System.out.println("Is A empty "+hashSet.size());
-     System.out.println("Is B empty "+hashSet2.size());
+     System.out.println("Is diff empty "+diff.isEmpty());
+     System.out.println("Is A empty "+hashSet.isEmpty());
+     System.out.println("Is B empty "+hashSet2.isEmpty());
           
   /* Starting from this point I will try to assess an average time of common functions 
      for different Sets
   */
      hashSet.clear();
-     Set<String> linkedSet = new LinkedSet<String>();
-     Set<String> treeSet = new TreeSet();
+     Set<String> linkedSet = new LinkedHashSet<String>();
+     Set<String> treeSet = new TreeSet<String>();
      
-     for(i=0, i <10000, i++)
+     //adding elements to different Sets
+     
+     //LINKED HASH SET
+     start = System.currentTimeMillis();
+     for(i=0; i < 1000000; i++)
      {
-       linkedList 
-      
+       linkedSet.add(""+i);
      }    
+     stop = System.currentTimeMillis();
+     dt = stop - start;
+     System.out.println("adding 100000 elements time to LINKED Set: "+dt);
      
+     //HASH SET
+     start = System.currentTimeMillis();
+     for(i=0; i < 1000000; i++)
+     {
+       hashSet.add(""+i);
+     }    
+     stop = System.currentTimeMillis();
+     dt = stop - start;
+     System.out.println("adding 100000 elements time to HASH Set: "+dt);
+     
+     //TREE SET
+     start = System.currentTimeMillis();
+     for(i=0; i < 1000000; i++)
+     {
+       treeSet.add(""+i);
+     }    
+     stop = System.currentTimeMillis();
+     dt = stop - start;
+     System.out.println("adding 100000 elements time to TREE Set: "+dt);
+     
+     
+     //Iterating elements over the whole Set
+     
+     //HASH SET
+     start = System.currentTimeMillis();
+     for(String str : hashSet){
+        str = "";
+     }
+     stop = System.currentTimeMillis();
+     dt = stop - start;
+     System.out.println("Iteration over HASH Set takes: "+dt);
+     
+
+     //removing elements from different Sets
+
+     //HASH SET
+     start = System.currentTimeMillis();
+     for(i=1000000; i > 0; i--)
+     {
+        hashSet.remove(""+i);
+     }    
+     stop = System.currentTimeMillis();
+     dt = stop - start;
+     System.out.println("Removing elements time from HASH Set: "+dt);
      
   }
   
