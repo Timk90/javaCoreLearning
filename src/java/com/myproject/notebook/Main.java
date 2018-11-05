@@ -11,7 +11,9 @@ class Main
   {
      System.out.println("Set...");
      SetExemple.setUse();
-     
+     System.out.println("***************************************************");  
+     System.out.println("List...");   
+     ListExemples.getExamples();
         
    
     
