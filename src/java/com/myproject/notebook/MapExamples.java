@@ -1,5 +1,5 @@
-package 
-import
+package com.myproject.notebook;
+import java.util.*;
 
 class MapExamples{
 
