@@ -1,11 +1,11 @@
 package com.myproject.notebook;
 import java.util.*;
 
-class SetExemple{
+class SetExample{
   /* 
      Set is an interface which extends Collection. 
      It is an unordered collection of objects in which duplicate values cannot be stored.
-     Basically, Set is implemented by HashSet, LinkedHashSet or TreeSet (sorted representation).
+     Basically, Set is implemented by HashSet, LinkedHashSet or (interface SortedSet) TreeSet (sorted representation).
      Set has various methods to add, remove clear, size, etc to enhance the usage of this interface
   */
 

@@ -10,11 +10,14 @@ class Main
   public static void main(String[] args)
   {
      System.out.println("Set...");
-     SetExemple.setUse();
+     //SetExample.setUse();
      System.out.println("***************************************************");  
      System.out.println("List...");   
-     ListExemples.getExamples();
-        
+     //ListExamples.getExamples();
+     System.out.println("***************************************************");  
+     System.out.println("Map...");   
+     MapExamples.useMap();  
+     System.out.println("***************************************************");  
    
     
   }

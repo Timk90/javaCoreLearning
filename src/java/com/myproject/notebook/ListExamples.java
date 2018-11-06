@@ -2,7 +2,7 @@ package com.myproject.notebook;
 import java.util.*;
 
 
-class ListExemples{
+class ListExamples{
 
 
 public static void getExamples(){
