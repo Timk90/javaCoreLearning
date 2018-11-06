@@ -4,11 +4,11 @@ import java.util.*;
 class MapExamples{
 
 /* 
-   clear: Removes all the elements from the map.
-   containsKey: Returns true if the map contains the requested key.
-   containsValue: Returns true if the map contains the requested value.
-   equals: Compares an Object with the map for equality.
-   get: Retrieve the value of the requested key.
+   * clear: Removes all the elements from the map.
+   * containsKey: Returns true if the map contains the requested key.
+   * containsValue: Returns true if the map contains the requested value.
+   * equals: Compares an Object with the map for equality.
+   * get: Retrieve the value of the requested key.
    keySet: Returns a Set that contains all keys of the map.
    put: Adds the requested key-value pair in the map.
    remove: Removes the requested key and its value from the map, if the key exists.
@@ -16,6 +16,7 @@ class MapExamples{
 
    Since Map is an interface you need to instantiate a concrete implementation of the Map 
    interface in order to use it. 
+   
    The Java Collections API contains the following Map implementations:
    DIFFERENT REALIZATIONS (CLASSES)
    java.util.HashMap
@@ -43,9 +44,9 @@ class MapExamples{
    Map<String,String> treeMap = new TreeMap<String,String>();
    Map<String,String> weakMap = new WeakHashMap<String,String>();
 
-//////POPULATING DIFFERENT MAPS //////////////////////////////////////
+//////           POPULATING DIFFERENT MAPS        //////////////////////////////////////
 
-  ///putting elements to the HASH MAP
+     ///putting elements to the HASH MAP
      timeInit = System.currentTimeMillis();
      for(i=0; i < 1000000; i++){
         hashMap.put("key_"+i, "element_"+i);
@@ -81,7 +82,7 @@ class MapExamples{
      dt = timeFin - timeInit;
      System.out.println("Put to LinkedHashMap: "+dt);
      
-  ///*** Accesing elements of MAPs ****////////////////////////////////////
+  ////     *** Accesing elements of MAPs ****   ////////
      
      //iterations using for-each ENTRY
      timeInit = System.currentTimeMillis();
@@ -112,7 +113,7 @@ class MapExamples{
      dt = timeFin - timeInit;
      System.out.println("Iterations with KEYS and FOR-EACH HashMap: "+dt);
 
-     ////       ITERATIONS USING ITERATOR()      ///
+     ////  ******  ITERATIONS USING ITERATOR()  ******  ///
      
      //iterations using ITERATOR ENTRY
      timeInit = System.currentTimeMillis();
@@ -146,6 +147,11 @@ class MapExamples{
      timeFin = System.currentTimeMillis();
      dt = timeFin - timeInit;
      System.out.println("Iterations with KEYS and ITERATOR HashMap: "+dt);
+
+    ////// ***** ADD SEARCHING ELEMNTS INSIDE THE MAP ***** //////     
+
+
+    ///// ****** ADD REMOVING ELEMENT FROM MAPA ****** /////
 
 
   }
