@@ -31,6 +31,7 @@ class MapExamples{
   public static void useMap(){
    int i;
    long timeInit, timeFin, dt;
+   String tmpStr1, tmpStr2;
 
    //Working with map
    Map<String,String> hashMap = new HashMap<String,String>();
@@ -42,9 +43,11 @@ class MapExamples{
    Map<String,String> treeMap = new TreeMap<String,String>();
    Map<String,String> weakMap = new WeakHashMap<String,String>();
 
-   //putting elements to the HASH MAP
+//////POPULATING DIFFERENT MAPS //////////////////////////////////////
+
+  ///putting elements to the HASH MAP
      timeInit = System.currentTimeMillis();
-     for(i=0; i < 100000; i++){
+     for(i=0; i < 1000000; i++){
         hashMap.put("key_"+i, "element_"+i);
      }
      timeFin = System.currentTimeMillis();
@@ -53,7 +56,7 @@ class MapExamples{
 
      //putting elements to the TREE MAP
      timeInit = System.currentTimeMillis();
-     for(i=0; i < 100000; i++){
+     for(i=0; i < 1000000; i++){
        treeMap.put("key_"+i, "element_"+i);
      }
      timeFin = System.currentTimeMillis();
@@ -62,7 +65,7 @@ class MapExamples{
 
      //putting elements to the HASH TABLE MAP
      timeInit = System.currentTimeMillis();
-     for(i=0; i < 100000; i++){
+     for(i=0; i < 1000000; i++){
        hashtable.put("key_"+i, "element_"+i);
      }
      timeFin = System.currentTimeMillis();
@@ -71,12 +74,78 @@ class MapExamples{
 
      //putting elements to the LINKED HASH MAP
      timeInit = System.currentTimeMillis();
-     for(i=0; i < 100000; i++){
+     for(i=0; i < 1000000; i++){
        linkedMap.put("key_"+i, "element_"+i);
      }
      timeFin = System.currentTimeMillis();
      dt = timeFin - timeInit;
      System.out.println("Put to LinkedHashMap: "+dt);
+     
+  ///*** Accesing elements of MAPs ****////////////////////////////////////
+     
+     //iterations using for-each ENTRY
+     timeInit = System.currentTimeMillis();
+     for(Map.Entry entry : hashMap.entrySet()){
+         tmpStr1 = (String)entry.getKey();
+         tmpStr2 = (String)entry.getValue();
+     }
+     timeFin = System.currentTimeMillis();
+     dt = timeFin - timeInit;
+     System.out.println("Iterations with ENTRY and FOR-EACH HashMap: "+dt);
+
+     //iterations using for-each VALUES
+     timeInit = System.currentTimeMillis();
+     for(Object value : hashMap.values()){
+         tmpStr2 = (String)value;
+     }
+     timeFin = System.currentTimeMillis();
+     dt = timeFin - timeInit;
+     System.out.println("Iterations with VALUES and FOR-EACH HashMap: "+dt);
+
+     //iterations using for-each KEYS
+     timeInit = System.currentTimeMillis();
+     for(Object key : hashMap.keySet()){
+         tmpStr1 = (String)key;
+         tmpStr2 = (String)hashMap.get(key);
+     }
+     timeFin = System.currentTimeMillis();
+     dt = timeFin - timeInit;
+     System.out.println("Iterations with KEYS and FOR-EACH HashMap: "+dt);
+
+     ////       ITERATIONS USING ITERATOR()      ///
+     
+     //iterations using ITERATOR ENTRY
+     timeInit = System.currentTimeMillis();
+     Iterator iterator = hashMap.entrySet().iterator();
+     while(iterator.hasNext()){
+         Map.Entry entry = (Map.Entry)iterator.next();
+         tmpStr1 = (String)entry.getKey();
+         tmpStr2 = (String)entry.getValue();
+     }
+     timeFin = System.currentTimeMillis();
+     dt = timeFin - timeInit;
+     System.out.println("Iterations with ENTRY and ITERATOR HashMap: "+dt);
+
+     //iterations using ITERATOR VALUES
+     timeInit = System.currentTimeMillis();
+     Iterator iterator1 = hashMap.values().iterator();
+     while(iterator1.hasNext()){
+         tmpStr2 = (String)iterator1.next();
+     }
+     timeFin = System.currentTimeMillis();
+     dt = timeFin - timeInit;
+     System.out.println("Iterations with VALUES and ITERATOR HashMap: "+dt);
+
+     //iterations using ITERATOR KEYS
+     timeInit = System.currentTimeMillis();
+     Iterator iterator2 = hashMap.keySet().iterator();
+     while(iterator2.hasNext()){
+         String key = (String)iterator2.next();
+         tmpStr2 = hashMap.get(key);
+     }
+     timeFin = System.currentTimeMillis();
+     dt = timeFin - timeInit;
+     System.out.println("Iterations with KEYS and ITERATOR HashMap: "+dt);
 
 
   }
