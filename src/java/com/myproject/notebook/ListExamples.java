@@ -28,7 +28,7 @@ public static void getExamples(){
 
     java.util.ArrayList
     java.util.LinkedList
-    java.util.Vector
+    java.util.Vector - synchronized ArrayList (MultyThreading)
     java.util.Stack
    
    ________________________________________SOME USEFULL FUNCTIONS___________________________________________
@@ -57,7 +57,7 @@ public static void getExamples(){
                        if it is present (optional operation).
    * removeAll(Collection<?> c)  Removes from this list all of its elements that are contained 
                                  in the specified collection (optional operation).
-   * 
+   * set(int index, Object newValue) 
    
 
     <<<<<<<<****************!!!!!!!Author!!!!!!!!!*************>>>>>>>>>>>>>>
@@ -69,12 +69,14 @@ public static void getExamples(){
 
    ArrayList<Long> arrayList = new ArrayList<Long>();
    LinkedList<Long> linkedList = new LinkedList<Long>();
-   List vectorList = new Vector();
+   List<Long> vectorList = new Vector<Long>();
    Stack<Long> stackList = new Stack<Long>();
 
    int j;
    long i, get, timeInit, timeFin, dt;  
-     
+  
+
+//*************************************************************************************   
      //affing elements to lists
      //ArrayList
      System.out.println("Adding time");
@@ -107,7 +109,18 @@ public static void getExamples(){
      dt = timeFin - timeInit;
      System.out.println("Stack: "+dt);
 
-    //getting elements from lists 
+     //Vector (synchronized ArrayList)
+     timeInit = System.currentTimeMillis();
+     for(j=0; j < 1000000; j++){
+	i = (long)j;
+        vectorList.add(i);
+     }   
+     timeFin = System.currentTimeMillis();
+     dt = timeFin - timeInit;
+     System.out.println("Vector: "+dt);
+
+//*************************************************************************
+ //getting elements from lists 
      System.out.println("Getting time");
 
      //ArrayList
@@ -138,30 +151,47 @@ public static void getExamples(){
      dt = timeFin - timeInit;
      System.out.println("Stack: "+dt);
 
-     //removing element from lists 
+     //Vector
+     timeInit = System.currentTimeMillis();
+     for(j=0; j < 1000000; j++){
+        vectorList.get(j);
+     }   
+     timeFin = System.currentTimeMillis();
+     dt = timeFin - timeInit;
+     System.out.println("Vector: "+dt);
+
+//***********************************************************
+//    removing element from lists 
      System.out.println("Removing time");
 
      //ArrayList
      timeInit = System.currentTimeMillis();
-     for(i=0; i < 100000; i++){
+     for(i=0; i < 10000; i++){
         arrayList.remove(i);
      } 
      timeFin = System.currentTimeMillis();
      dt = timeFin - timeInit;
      System.out.println("ArrayList: "+dt);
 
-     //LinkedKist   
+     //LinkedList   
      timeInit = System.currentTimeMillis();
-     for(i=0; i < 100000; i++){
+     for(i=0; i < 10000; i++){
         linkedList.remove(i);
      }
      timeFin = System.currentTimeMillis();
      dt = timeFin - timeInit;
      System.out.println("LinkedList: "+dt);
 
-
+     //Vector   
+     timeInit = System.currentTimeMillis();
+     for(i=0; i < 10000; i++){
+        vectorList.remove(i);
+     }
+     timeFin = System.currentTimeMillis();
+     dt = timeFin - timeInit;
+     System.out.println("Vector: "+dt);
      
-     } 
+  }
 
 }
 

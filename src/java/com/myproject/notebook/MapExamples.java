@@ -153,7 +153,17 @@ class MapExamples{
 
     ///// ****** ADD REMOVING ELEMENT FROM MAPA ****** /////
 
+    //// ****** SORT HASH MAP *************//////
+    //List list = new ArrayList(hashMap.entrySet());
+    // sort Map on Keys (the same could be applied for values)
+    //	Collection.sort(list, new Comparator(){    
+    //		@Override
+    //		public int compare(Map.Entry entry1, Map.Entry entry2){
+    //   			return entry1.getKey().compareTo(entry2.getKey());
+    //            }
+    //	});
+    
+    }
 
-  }
 
 }
