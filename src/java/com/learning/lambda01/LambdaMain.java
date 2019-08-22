@@ -35,6 +35,7 @@ public class LambdaMain {
         printAll(arr, n->n>3);
         System.out.println("============");
         printAll(arr, n->n%2 == 0);
+        System.out.println("============");
 
         Consumer<String> consumer;
 
